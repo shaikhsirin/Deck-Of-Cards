@@ -10,18 +10,34 @@ public class DistributeCards {
             giveCard(playerNumber);
         }
     }
-      //give only one card Randomly
-        void giveCard(int playerNumber) {
 
-            Random random = new Random();
+    //give only one card Randomly
+    void giveCard(int playerNumber) {
 
-            int suit = random.nextInt(4);
-            int rank = random.nextInt(13);
+        Random random = new Random();
 
-            if (cards[suit][rank] != 0) {
-                giveCard(playerNumber);
-            } else {
-                cards[suit][rank] = playerNumber;
-            }
+        int suit = random.nextInt(4);
+        int rank = random.nextInt(13);
+
+        if (cards[suit][rank] != 0) {
+            giveCard(playerNumber);
+        } else {
+            cards[suit][rank] = playerNumber;
         }
     }
+
+    //Prints cards in ascending order
+    void showCards(int playerNumber) {
+        for (int suit = 0; suit < 4; suit++) {
+            for (int rank = 0; rank < 13; rank++) {
+                if (cards[suit][rank] == playerNumber) {
+                    System.out.print(getSuit(suit) + " " + getRank(rank) + "\t");
+                }
+            }
+        }
+        System.out.println("\n");
+    }
+
+}
+
+
