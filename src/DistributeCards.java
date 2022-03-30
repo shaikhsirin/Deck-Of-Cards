@@ -70,7 +70,21 @@ public class DistributeCards {
                 return "";
         }
     }
-
+    /** returns suit name from number */
+    String getSuit(int suitNumber) {
+        switch(suitNumber) {
+            case 0:
+                return "Clubs";
+            case 1:
+                return "Diamonds";
+            case 2:
+                return "Hearts";
+            case 3:
+                return "Spades";
+            default:
+                return "";
+        }
+    }
 }
 
 
